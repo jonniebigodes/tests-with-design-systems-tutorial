@@ -1,5 +1,5 @@
 {
-  "name": "learnstorybook-design-system",
+  "name": "@jonniebigodes/testing-with-learnstorybook-design-system",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -27,7 +27,12 @@
   },
   "babel": {
     "presets": [
-      "react-app"
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
     ]
   },
   "browserslist": {
@@ -43,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.13.10",
     "@storybook/addon-a11y": "^6.1.21",
     "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-essentials": "^6.1.21",
@@ -51,6 +57,12 @@
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.1.21",
     "chromatic": "^5.7.0",
+    "cross-env": "^7.0.3",
     "prettier": "^2.2.1"
-  }
+  },
+  "description": "Storybook design systems tutorial",
+  "main": "dist/index.js",
+  "repository": "https://github.com/jonniebigodes/tests-with-design-systems-tutorial",
+  "author": "jonniebigodes <joaocontadesenvolvimento@gmail.com>",
+  "license": "MIT"
 }
