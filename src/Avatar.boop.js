@@ -5,6 +5,10 @@ import { Avatar } from "./Avatar";
 export default {
   title: "Design System/Avatar",
   component: Avatar,
+  parameters: {
+    componentSubtitle:
+      "Displays an image that represents a user or organization",
+  },
 };
 
 export const Standard = (args) => <Avatar {...args} />;
@@ -26,7 +30,12 @@ Sizes.args = {
   username: "Tom Coleman",
   src: "https://avatars2.githubusercontent.com/u/132554",
 };
-
+Sizes.parameters = {
+  docs: {
+    // The story now contains a description
+    storyDescription: "4 sizes are supported.",
+  },
+};
 export const Initials = (args) => (
   <div>
     <Avatar username="Tom Coleman" />
@@ -37,16 +46,16 @@ export const Initials = (args) => (
 );
 
 export const Loading = (args) => (
-    <div>
-      <Avatar {...args} size="large" />
-      <Avatar {...args} size="medium" />
-      <Avatar {...args} size="small" />
-      <Avatar {...args} size="tiny" />
-    </div>
-  );
-  Loading.args = {
-    loading: true,
-  };
+  <div>
+    <Avatar {...args} size="large" />
+    <Avatar {...args} size="medium" />
+    <Avatar {...args} size="small" />
+    <Avatar {...args} size="tiny" />
+  </div>
+);
+Loading.args = {
+  loading: true,
+};
 
 export const Large = (args) => (
   <div>
@@ -60,14 +69,13 @@ export const Large = (args) => (
   </div>
 );
 
-
 // New story using controls
-const Template = args => <Avatar {...args} />;
+const Template = (args) => <Avatar {...args} />;
 
 export const Controls = Template.bind({});
 Controls.args = {
   loading: false,
-  size: 'tiny',
-  username: 'Dominic Nguyen',
-  src: 'https://avatars2.githubusercontent.com/u/263385',
+  size: "tiny",
+  username: "Dominic Nguyen",
+  src: "https://avatars2.githubusercontent.com/u/263385",
 };
